@@ -4,18 +4,65 @@
   "name": "DBeast Monitor",
   "id": "dbeast-dbeastmonitor-app",
   "info": {
-    "keywords": ["app"],
-    "description": "DBeast Monitoring toolkit for Elastic Stack",
+    "keywords": [
+      "app",
+      "DBeast monitor"
+    ],
+    "description": "DBeast Monitor for Elastic Stack",
     "author": {
-      "name": "DBeast"
+      "name": "DBeast",
+      "url": "https://dbeast.co"
     },
     "logos": {
       "small": "img/favicon-32x32.png",
       "large": "img/favicon-32x32.png"
     },
-    "screenshots": [],
-    "version": "0.5",
-    "updated": "2023-10-01"
+    "links": [
+      {
+        "name": "Playground site",
+        "url": "https://play.dbeast.co/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/dbeast-co/dbeast-monitor"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/dbeast-co/dbeast-monitor/blob/main/LICENSE"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "Add new cluster dashboard",
+        "path": "img/screenshots/AddNewClusterPage.jpg"
+      },
+      {
+        "name": "Cluster's list dashboard",
+        "path": "img/screenshots/ClustersList.jpg"
+      },
+      {
+        "name": "Cluster monitoring dashboard",
+        "path": "img/screenshots/ClusterMonitoring.jpg"
+      },
+      {
+        "name": "Shards overview dashboard",
+        "path": "img/screenshots/ShardsOverview.jpg"
+      },
+      {
+        "name": "Index patterns overview dashboard",
+        "path": "img/screenshots/IndexPatternsOverview.jpg"
+      },
+      {
+        "name": "Logstash overview dashboard",
+        "path": "img/screenshots/LogstashOverview.jpg"
+      },
+      {
+        "name": "Logstash Node overview dashboard",
+        "path": "img/screenshots/LogstashNodeOverview.jpg"
+      }
+    ],
+    "version": "0.5.1",
+    "updated": "2023-12-07"
   },
   "includes": [
     {
@@ -29,11 +76,29 @@
     },
     {
       "type": "dashboard",
+      "name": "Add new cluster",
+      "path": "dashboards/Add-new-cluster-dashboard.json",
+      "role": "Viewer",
+      "addToNav": true,
+      "uid": "add-new-cluster-dashboard",
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
       "name": "Elastic stack monitoring dashboard",
       "path": "dashboards/Elastic-stack-monitoring-dashboard.json",
       "role": "Viewer",
       "addToNav": false,
       "uid": "elastic-stack-monitoring-dashboard",
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Host overview",
+      "path": "dashboards/Host-overview.json",
+      "role": "Viewer",
+      "addToNav": false,
+      "uid": "host-overview",
       "defaultNav": false
     },
     {
@@ -65,20 +130,20 @@
     },
     {
       "type": "dashboard",
-      "name": "Elasticsearch index patterns overview",
-      "uid": "elasticsearch-index-patterns-overview",
-      "path": "dashboards/Elasticsearch-index-patterns-overview.json",
+      "name": "Elasticsearch ingest pipelines overview",
+      "path": "dashboards/Elasticsearch-ingest-pipelines-overview.json",
       "role": "Viewer",
       "addToNav": false,
+      "uid": "elasticsearch-ingest-pipelines-overview",
       "defaultNav": false
     },
     {
       "type": "dashboard",
-      "name": "Add new cluster",
-      "path": "dashboards/Add-new-cluster-dashboard.json",
+      "name": "Elasticsearch pipeline analytics",
+      "path": "dashboards/Elasticsearch-pipeline-analytics.json",
       "role": "Viewer",
-      "addToNav": true,
-      "uid": "add-new-cluster-dashboard",
+      "addToNav": false,
+      "uid": "elasticsearch-pipeline-analytics",
       "defaultNav": false
     },
     {
@@ -92,11 +157,38 @@
     },
     {
       "type": "dashboard",
-      "name": "Shards overview dashboard",
-      "path": "dashboards/Shards-overview-dashboard.json",
+      "name": "Elasticsearch shards overview dashboard",
+      "path": "dashboards/Elasticsearch-shards-overview-dashboard.json",
       "role": "Viewer",
       "addToNav": false,
-      "uid": "shards-overview-dashboard",
+      "uid": "elasticsearch-shards-overview-dashboard",
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Elasticsearch index overview",
+      "path": "dashboards/Elasticsearch-index-overview.json",
+      "role": "Viewer",
+      "addToNav": false,
+      "uid": "elasticsearch-index-overview",
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Elasticsearch index monitor",
+      "path": "dashboards/Elasticsearch-index-monitor.json",
+      "role": "Viewer",
+      "addToNav": false,
+      "uid": "elasticsearch-index-monitor",
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Elasticsearch index pattern monitor",
+      "path": "dashboards/Elasticsearch-index-pattern-monitor.json",
+      "role": "Viewer",
+      "addToNav": false,
+      "uid": "elasticsearch-index-pattern-monitor",
       "defaultNav": false
     }
   ],

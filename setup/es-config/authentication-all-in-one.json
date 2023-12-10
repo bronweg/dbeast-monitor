@@ -1,3 +1,23 @@
+PUT /_security/role/dbeast-mon-role
+{
+  "cluster": [
+    "monitor"
+  ],
+  "indices": [
+    {
+      "names": [
+        "dbeast-*",
+		"metricbeat-*",
+		"filebeat-*",
+		".monitoring-*"
+      ],
+      "privileges": [
+        "all"
+      ]
+    }
+  ]
+}
+
 PUT /_security/role/dbeast-prod-role
 {
   "cluster": [
@@ -28,43 +48,20 @@ PUT /_security/role/dbeast-prod-role
   }
 }
 
-PUT /_security/role/dbeast-mon-role
-{
-  "cluster": [
-    "monitor"
-  ],
-  "indices": [
-    {
-      "names": [
-        "dbeast-*"
-      ],
-      "privileges": [
-        "all"
-      ]
-    }
-  ],
-  "metadata": {
-    "created_by": "DBeast monitor application"
-  }
-}
-
 POST /_security/user/dbeast-prod
 {
-  "password": "<PSW>",
-  "roles": [
-    "dbeast-prod-role"
-  ],
-  "full_name": "DBeast prod user",
-  "metadata": {
-    "created_by": "DBeast monitor application"
+  "password" : "<PWD>",
+  "roles" : [ "dbeast-prod-role" ],
+  "full_name" : "DBeast user",
+  "metadata" : {
+    "created_by" : "DBeast monitor application"
   }
 }
-
 POST /_security/user/dbeast-mon
 {
-  "password" : "<PSW>",
+  "password" : "<PWD>",
   "roles" : [ "dbeast-mon-role" ],
-  "full_name" : "DBeast mon user",
+  "full_name" : "DBeast user",
   "metadata" : {
     "created_by" : "DBeast monitor application"
   }

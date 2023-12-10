@@ -30,12 +30,10 @@ PUT /_security/role/dbeast-prod-role
 
 POST /_security/user/dbeast-prod
 {
-  "password": "<PSW>",
-  "roles": [
-    "dbeast-prod-role"
-  ],
-  "full_name": "DBeast prod user",
-  "metadata": {
-    "created_by": "DBeast monitor application"
+  "password" : "<PWD>",
+  "roles" : [ "dbeast-prod-role" ],
+  "full_name" : "DBeast user",
+  "metadata" : {
+    "created_by" : "DBeast monitor application"
   }
 }
