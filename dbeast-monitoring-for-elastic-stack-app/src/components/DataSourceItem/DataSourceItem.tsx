@@ -179,7 +179,7 @@ export class DataSourceItem extends PureComponent<Props, ClusterStatsItemState> 
                 this.setState({
                     cluster_uuid: dataSources.cluster_uuid,
                     cluster_name: dataSources.cluster_name,
-                    status: dataSources.status,
+                    status: dataSources.status.toUpperCase(),
                     versions: dataSources.nodes.versions,
                     numberOfIndices: dataSources.indices.count,
                     numberOfShards: dataSources.indices.shards.total,
@@ -285,7 +285,8 @@ export class DataSourceItem extends PureComponent<Props, ClusterStatsItemState> 
                         <p>{this.state.cluster_uuid}</p>
                     </div>
                     <div className="actions col">
-                        <span className={this.state.status.toUpperCase()}>{this.state.status.toUpperCase()}</span>
+                        <span className={this.state.status}>{this.state.status}</span>
+                        {/*<span className={this.state.status.toUpperCase()}>{this.state.status.toUpperCase()}</span>*/}
                     </div>
                 </header>
 
