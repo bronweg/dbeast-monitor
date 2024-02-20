@@ -19,9 +19,9 @@ func main() {
 	// ID).
 	FOLDER_PATH := "templates"
 	ctxLogger := log.DefaultLogger
-	ctxLogger.Info("The app path: " + os.Args[0])
-	lastIndex1 := strings.LastIndex(os.Args[0], "dbeast-dbeastmonitor-app")
-	lastIndex := strings.LastIndex(os.Args[0][:lastIndex1], string(os.PathSeparator))
+	ctxLogger.Info("The backend path: " + os.Args[0])
+	lastIndex := strings.LastIndex(os.Args[0], "/")
+	ctxLogger.Info("The Data source folder path: " + os.Args[0][:lastIndex] + string(os.PathSeparator) + FOLDER_PATH)
 	err := plugin.LoadTemplatesFromFolder(os.Args[0][:lastIndex] +
 		string(os.PathSeparator) + FOLDER_PATH)
 	if err != nil {

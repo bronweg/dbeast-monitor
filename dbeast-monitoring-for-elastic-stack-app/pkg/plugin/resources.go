@@ -7,47 +7,10 @@ import (
 	"strings"
 )
 
-// /api/plugins/app-with-backend/resources/ping
-
-// handlePing is an example HTTP GET resource that returns a {"message": "ok"} JSON response.
-//func (a *App) handlePing(w http.ResponseWriter, req *http.Request) {
-//	ctxLogger := log.DefaultLogger.FromContext(req.Context())
-//	w.Header().Add("Content-Type", "application/json")
-//	if _, err := w.Write([]byte(`{"message": "Мяу"}`)); err != nil {
-//		http.Error(w, err.Error(), http.StatusInternalServerError)
-//		return
-//	}
-//	ctxLogger.Info("ping received")
-//	w.WriteHeader(http.StatusOK)
-//}
-
-// handleEcho is an example HTTP POST resource that accepts a JSON with a "message" key and
-// returns to the client whatever it is sent.
-//func (a *App) handleEcho(w http.ResponseWriter, req *http.Request) {
-//	if req.Method != http.MethodPost {
-//		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
-//		return
-//	}
-//	var body struct {
-//		Message string `json:"message"`
-//	}
-//	if err := json.NewDecoder(req.Body).Decode(&body); err != nil {
-//		http.Error(w, err.Error(), http.StatusBadRequest)
-//		return
-//	}
-//	w.Header().Add("Content-Type", "application/json")
-//	if err := json.NewEncoder(w).Encode(body); err != nil {
-//		http.Error(w, err.Error(), http.StatusInternalServerError)
-//		return
-//	}
-//	w.WriteHeader(http.StatusOK)
-//}
-
 /*
-	TestStatusHandler handles HTTP requests to retrieve and update the status data based on the provided environment configuration.
-
-It takes a http.ResponseWriter and http.Request as input, decodes the request body to extract environment configuration,
-updates the status and sends the updated status data in JSON format as an HTTP response.
+		TestStatusHandler handles HTTP requests to retrieve and update the status data based on the provided environment configuration.
+	    It takes a http.ResponseWriter and http.Request as input, decodes the request body to extract environment configuration,
+	    updates the status and sends the updated status data in JSON format as an HTTP response.
 */
 func (a *App) TestStatusHandler(w http.ResponseWriter, req *http.Request) {
 	ctxLogger := log.DefaultLogger.FromContext(req.Context())
