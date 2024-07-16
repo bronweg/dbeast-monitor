@@ -3,6 +3,8 @@
   "type": "app",
   "name": "DBeast Monitor",
   "id": "dbeast-dbeastmonitor-app",
+  "executable": "gpx_app-dbeast-dbeastmonitor-app",
+  "backend": true,
   "info": {
     "keywords": [
       "app",
@@ -61,10 +63,18 @@
         "path": "img/screenshots/LogstashNodeOverview.jpg"
       }
     ],
-    "version": "0.5.1",
-    "updated": "2023-12-07"
+    "version": "0.7.1",
+    "updated": "%TODAY%"
   },
   "includes": [
+    {
+      "type": "page",
+      "icon": "cog",
+      "name": "Configuration",
+      "path": "/plugins/%PLUGIN_ID%",
+      "role": "Admin",
+      "addToNav": false
+    },
     {
       "type": "page",
       "name": "Cluster's list",
@@ -190,10 +200,19 @@
       "addToNav": false,
       "uid": "elasticsearch-index-pattern-monitor",
       "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Elasticsearch tasks analytics",
+      "path": "dashboards/Elasticsearch-tasks-analytics.json",
+      "role": "Viewer",
+      "addToNav": false,
+      "uid": "elasticsearch-tasks-analytics",
+      "defaultNav": false
     }
   ],
   "dependencies": {
-    "grafanaDependency": ">=9.0.0",
+    "grafanaDependency": ">=9.4.0",
     "plugins": []
   }
 }
